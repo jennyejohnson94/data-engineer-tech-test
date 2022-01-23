@@ -23,5 +23,5 @@ if __name__ == '__main__':
             pipeline
             | 'Read the csv' >> beam.io.ReadFromText('gs://cloud-samples-data/bigquery/sample-transactions/transactions.csv', skip_header_lines=1)
             | TotalAmountPerDate()
-            | 'Write to file' >> beam.io.WriteToText('./output/results', file_name_suffix='.json1')
+            | 'Write to file' >> beam.io.WriteToText('./output/results', file_name_suffix='.json1.gz')
         )
